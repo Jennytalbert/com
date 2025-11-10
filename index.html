@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talbert Law Firm, LLC | Premier Legal Representation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A1931;
+            --deep-blue: #1A3A5F;
+            --gold: #C9A96E;
+            --light-gold: #E8D9C5;
+            --charcoal: #2D3748;
+            --light-gray: #F8F9FA;
+            --white: #FFFFFF;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--charcoal);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .section-padding {
+            padding: 120px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background-color: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+        
+        .btn:hover:before {
+            left: 100%;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 25, 49, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            color: var(--navy);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--white);
+            line-height: 1;
+        }
+        
+        .logo-text span {
+            font-size: 0.8rem;
+            color: var(--light-gold);
+            letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--light-gold);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .phone-number {
+            color: var(--light-gold);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 25, 49, 0.9) 0%, rgba(26, 58, 95, 0.8) 100%), url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 4.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .hero-accent {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%);
+            opacity: 0.1;
+        }
+        
+        /* Trust Indicators */
+        .trust-indicators {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .indicators-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .indicator {
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .indicator-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .indicator-text {
+            font-size: 1.1rem;
+            color: var(--light-gold);
+        }
+        
+        /* About Section */
+        .about {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .about-text {
+            position: relative;
+        }
+        
+        .about-text h2 {
+            margin-bottom: 2rem;
+        }
+        
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+        
+        .about-features {
+            margin-top: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h4 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .about-image-main {
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-image-main img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover .about-image-main img {
+            transform: scale(1.03);
+        }
+        
+        .about-image-accent {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light-gold);
+            border-radius: 5px;
+            z-index: 1;
+        }
+        
+        /* Practice Areas */
+        .practice-areas {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--gold);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .practice-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .practice-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .practice-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--light-gold) 100%);
+            z-index: 2;
+        }
+        
+        .practice-icon {
+            padding: 40px 40px 20px;
+            font-size: 2.5rem;
+            color: var(--navy);
+        }
+        
+        .practice-content {
+            padding: 0 40px 40px;
+        }
+        
+        .practice-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .practice-content p {
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        
+        /* Attorneys Section */
+        .attorneys {
+            position: relative;
+        }
+        
+        .attorneys-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .attorney-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .attorney-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .attorney-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .attorney-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .attorney-card:hover .attorney-image img {
+            transform: scale(1.1);
+        }
+        
+        .attorney-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(10, 25, 49, 0.9));
+            padding: 30px;
+            color: var(--white);
+            transform: translateY(10px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .attorney-card:hover .attorney-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .attorney-info {
+            padding: 30px;
+        }
+        
+        .attorney-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .attorney-title {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .attorney-bio {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        
+        .attorney-specialty {
+            display: inline-block;
+            background-color: var(--light-gold);
+            color: var(--navy);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials h2 {
+            color: var(--white);
+        }
+        
+        .testimonials h2:after {
+            background-color: var(--gold);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .testimonial-text:before, .testimonial-text:after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text:before {
+            top: -20px;
+            left: -20px;
+        }
+        
+        .testimonial-text:after {
+            bottom: -40px;
+            right: -20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-role {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta h2 {
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta h2:after {
+            background-color: var(--navy);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            color: var(--navy);
+        }
+        
+        .cta .btn {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+        
+        .cta .btn:hover {
+            background-color: var(--deep-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 100px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 30px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            margin-bottom: 0;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+            transform: translateY(-5px);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .practice-grid,
+            .attorneys-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .indicators-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--navy);
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                gap: 20px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .practice-grid,
+            .attorneys-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-padding {
+                padding: 80px 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .indicators-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">T</div>
+                <div class="logo-text">
+                    <h1>Talbert Law</h1>
+                    <span>ESTABLISHED 1995</span>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#practice-areas">Practice Areas</a></li>
+                    <li><a href="#attorneys">Attorneys</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta">
+                <div class="phone-number">
+                    <i class="fas fa-phone"></i>
+                    (555) 123-4567
+                </div>
+                <a href="#contact" class="btn">Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Excellence in Legal Representation</h1>
+                <p>For over 25 years, Talbert Law Firm has provided sophisticated legal counsel with uncompromising integrity and exceptional results for our clients.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">Schedule Consultation <i class="fas fa-arrow-right"></i></a>
+                    <a href="#practice-areas" class="btn btn-outline">Our Expertise</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-accent"></div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+        <div class="container indicators-container">
+            <div class="indicator">
+                <div class="indicator-number">25+</div>
+                <div class="indicator-text">Years of Excellence</div>
+            </div>
+            <div class="indicator">
+                <div class="indicator-number">1,250+</div>
+                <div class="indicator-text">Cases Resolved</div>
+            </div>
+            <div class="indicator">
+                <div class="indicator-number">5</div>
+                <div class="indicator-text">Expert Attorneys</div>
+            </div>
+            <div class="indicator">
+                <div class="indicator-number">98%</div>
+                <div class="indicator-text">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>A Legacy of Legal Excellence</h2>
+                    <p>Founded in 1995, Talbert Law Firm has established itself as a premier legal practice known for sophisticated representation and exceptional client service. Our attorneys bring deep expertise across multiple practice areas, allowing us to provide comprehensive counsel for our clients' most complex legal challenges.</p>
+                    <p>We believe in building lasting relationships with our clients, founded on trust, transparency, and a shared commitment to achieving the best possible outcomes.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-scale-balanced"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Proven Track Record</h4>
+                                <p>Decades of successful case resolutions and client victories.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Expert Attorneys</h4>
+                                <p>Our team includes specialists in each of our practice areas.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Client-Focused Approach</h4>
+                                <p>We prioritize your goals and provide personalized strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#attorneys" class="btn">Meet Our Team <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-main">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Talbert Law Firm Office">
+                    </div>
+                    <div class="about-image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section class="practice-areas section-padding" id="practice-areas">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Practice Areas</h2>
+                <p>We provide sophisticated legal counsel across a range of practice areas, with deep expertise in each specialty.</p>
+            </div>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Probate & Estate Planning</h3>
+                        <p>Comprehensive estate planning services including wills, trusts, probate administration, and estate litigation to protect your legacy and provide for your loved ones.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-home-heart"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Family Law</h3>
+                        <p>Compassionate guidance through divorce, child custody, support agreements, and other family law matters with sensitivity to your unique situation.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Corporate Law</h3>
+                        <p>Strategic legal counsel for businesses of all sizes, including formation, contracts, compliance, mergers, and acquisitions to support your growth.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Litigation</h3>
+                        <p>Aggressive representation in civil litigation matters, with a track record of successful outcomes in both settlement negotiations and courtroom trials.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Real Estate Law</h3>
+                        <p>Expert guidance on residential and commercial real estate transactions, disputes, zoning issues, and property development matters.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <div class="practice-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <div class="practice-content">
+                        <h3>Personal Injury</h3>
+                        <p>Dedicated advocacy for injury victims, fighting to secure fair compensation for accidents, medical malpractice, and wrongful death cases.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attorneys Section -->
+    <section class="attorneys section-padding" id="attorneys">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Attorneys</h2>
+                <p>Meet our team of dedicated legal professionals, each bringing specialized expertise and a commitment to client success.</p>
+            </div>
+            <div class="attorneys-grid">
+                <div class="attorney-card">
+                    <div class="attorney-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" alt="Jenny B. Talbert">
+                        <div class="attorney-overlay">
+                            <h3>Jenny B. Talbert</h3>
+                            <div class="attorney-title">Managing Partner</div>
+                            <p>Specializing in probate and estate planning for over 20 years.</p>
+                        </div>
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Jenny B. Talbert</h3>
+                        <div class="attorney-title">Managing Partner, Probate & Estate Planning Attorney</div>
+                        <p class="attorney-bio">With over 20 years of experience, Jenny specializes in probate and estate planning, helping families protect their legacies and navigate complex legal processes with compassion.</p>
+                        <span class="attorney-specialty">Probate & Estate Law</span>
+                    </div>
+                </div>
+                <div class="attorney-card">
+                    <div class="attorney-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Robert M. Chen">
+                        <div class="attorney-overlay">
+                            <h3>Robert M. Chen</h3>
+                            <div class="attorney-title">Senior Partner</div>
+                            <p>Expert in corporate law and business transactions.</p>
+                        </div>
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Robert M. Chen</h3>
+                        <div class="attorney-title">Senior Partner, Corporate Law</div>
+                        <p class="attorney-bio">Robert brings 18 years of corporate law expertise, advising businesses on formation, compliance, contracts, and complex transactions to support their strategic objectives.</p>
+                        <span class="attorney-specialty">Corporate Law</span>
+                    </div>
+                </div>
+                <div class="attorney-card">
+                    <div class="attorney-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="David L. Rodriguez">
+                        <div class="attorney-overlay">
+                            <h3>David L. Rodriguez</h3>
+                            <div class="attorney-title">Partner</div>
+                            <p>Specializing in family law and domestic relations.</p>
+                        </div>
+                    </div>
+                    <div class="attorney-info">
+                        <h3>David L. Rodriguez</h3>
+                        <div class="attorney-title">Partner, Family Law</div>
+                        <p class="attorney-bio">David has dedicated his 15-year career to family law, providing empathetic yet assertive representation in divorce, custody, and other sensitive family matters.</p>
+                        <span class="attorney-specialty">Family Law</span>
+                    </div>
+                </div>
+                <div class="attorney-card">
+                    <div class="attorney-image">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="Sarah J. Fitzpatrick">
+                        <div class="attorney-overlay">
+                            <h3>Sarah J. Fitzpatrick</h3>
+                            <div class="attorney-title">Associate</div>
+                            <p>Focused on personal injury and civil litigation.</p>
+                        </div>
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Sarah J. Fitzpatrick</h3>
+                        <div class="attorney-title">Associate, Personal Injury</div>
+                        <p class="attorney-bio">Sarah is a passionate advocate for injury victims, fighting tirelessly to secure fair compensation for clients affected by accidents and negligence.</p>
+                        <span class="attorney-specialty">Personal Injury</span>
+                    </div>
+                </div>
+                <div class="attorney-card">
+                    <div class="attorney-image">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Marcus A. Williams">
+                        <div class="attorney-overlay">
+                            <h3>Marcus A. Williams</h3>
+                            <div class="attorney-title">Associate</div>
+                            <p>Expert in real estate law and criminal defense.</p>
+                        </div>
+                    </div>
+                    <div class="attorney-info">
+                        <h3>Marcus A. Williams</h3>
+                        <div class="attorney-title">Associate, Real Estate & Criminal Defense</div>
+                        <p class="attorney-bio">Marcus provides vigorous defense in criminal matters and assists clients with residential and commercial real estate transactions and disputes.</p>
+                        <span class="attorney-specialty">Real Estate & Criminal Law</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>Hear from our clients about their experiences working with Talbert Law Firm.</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text">Talbert Law Firm handled my mother's estate with incredible compassion and professionalism. Jenny Talbert guided us through the probate process with patience and expertise, making a difficult time much more manageable.</p>
+                    <p class="testimonial-author">James Peterson</p>
+                    <p class="testimonial-role">Estate Client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Schedule Your Consultation</h2>
+            <p>Contact Talbert Law Firm today to discuss your legal needs with one of our experienced attorneys. We're here to provide the sophisticated legal counsel you deserve.</p>
+            <a href="#contact" class="btn">Contact Us Today <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <h3>Talbert Law Firm</h3>
+                    <p>For over 25 years, Talbert Law Firm has provided exceptional legal representation with integrity, expertise, and a commitment to client success.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#practice-areas">Practice Areas</a>
+                    <a href="#attorneys">Our Attorneys</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Practice Areas</h3>
+                    <a href="#">Probate & Estate Planning</a>
+                    <a href="#">Family Law</a>
+                    <a href="#">Corporate Law</a>
+                    <a href="#">Litigation</a>
+                    <a href="#">Real Estate Law</a>
+                    <a href="#">Personal Injury</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p>123 Legal Avenue, Suite 500<br>Metropolis, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p>info@talbertlawfirm.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat: By Appointment Only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Talbert Law Firm, LLC. All Rights Reserved. | <a href="#">Disclaimer</a> | <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(10, 25, 49, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(10, 25, 49, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('nav a, .hero-btns a, .footer-column a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.querySelector('nav ul').classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Testimonial slider
+        const testimonials = [
+            {
+                text: "Talbert Law Firm handled my mother's estate with incredible compassion and professionalism. Jenny Talbert guided us through the probate process with patience and expertise, making a difficult time much more manageable.",
+                author: "James Peterson",
+                role: "Estate Client"
+            },
+            {
+                text: "Robert Chen provided exceptional counsel during our business acquisition. His attention to detail and strategic thinking ensured a smooth transaction and protected our interests throughout the process.",
+                author: "Michelle Rodriguez",
+                role: "Business Client"
+            },
+            {
+                text: "David Rodriguez represented me in my divorce with both compassion and fierce advocacy. He helped me secure a fair settlement and custody arrangement that works for my children and me.",
+                author: "Amanda Stevens",
+                role: "Family Law Client"
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial');
+        
+        function rotateTestimonials() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            testimonialElement.innerHTML = `
+                <p class="testimonial-text">${testimonials[currentTestimonial].text}</p>
+                <p class="testimonial-author">${testimonials[currentTestimonial].author}</p>
+                <p class="testimonial-role">${testimonials[currentTestimonial].role}</p>
+            `;
+        }
+
+        // Change testimonial every 5 seconds
+        setInterval(rotateTestimonials, 5000);
+    </script>
+</body>
+</html>
